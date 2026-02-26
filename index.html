@@ -3,154 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grupo Corporativo Chanduvi - Soluciones Integrales</title>
+    <title>Grupo Corporativo Chanduvi – Soluciones Integrales | Piura</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
       :root {
         --guinda: #70161d;
         --guinda-hover: #551116;
+        --guinda-light: #fff1f2;
         --gris-claro: #f8f9fa;
         --blanco: #ffffff;
+        --dorado: #c9a84c;
       }
 
+      /* ── Base ── */
       body {
         font-family: "Lato", sans-serif;
         color: #333;
         scroll-behavior: smooth;
         background-color: var(--gris-claro);
       }
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Playfair Display", serif;
+      h1, h2, h3, h4 { font-family: "Playfair Display", serif; }
+
+      /* ── Línea decorativa ── */
+      .linea-roja {
+        width: 70px;
+        height: 4px;
+        background: var(--guinda);
+        margin: 12px auto 20px;
+        border-radius: 2px;
       }
 
-      /* Navbar Profesional */
+      /* ── Navbar ── */
       .navbar {
         background: var(--blanco);
         border-bottom: 4px solid var(--guinda);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,.1);
       }
-      .nav-link {
+      .navbar .nav-link {
         font-weight: 700;
         color: #333 !important;
         text-transform: uppercase;
         padding: 10px 15px !important;
+        font-size: .88rem;
+        letter-spacing: .5px;
+        transition: color .2s;
       }
-      .nav-link:hover {
-        color: var(--guinda) !important;
+      .navbar .nav-link:hover { color: var(--guinda) !important; }
+
+      /* badge de empresa en navbar */
+      .nav-badge {
+        font-size: .7rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 20px;
+        letter-spacing: .5px;
       }
 
-      /* Hero Moderno */
+      /* ── Hero único ── */
       .hero {
         background:
-          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80");
-        background-size: cover;
-        background-position: center;
+          linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+          url("img/foto_9.png") no-repeat center center/cover;
         background-attachment: fixed;
-        height: 75vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         color: white;
         text-align: center;
       }
+      .hero-glass {
+        background: rgba(255,255,255,.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,.2);
+      }
+      .hero-tag {
+        display: inline-block;
+        padding: 5px 16px;
+        border-radius: 30px;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
 
-      /* Tabs de Identidad (Contraste Blanco sobre Guinda) */
+      /* ── Divisor de entidades ── */
+      .entity-divider {
+        background: linear-gradient(135deg, var(--guinda) 0%, #9b2028 100%);
+        color: white;
+        padding: 18px 0;
+      }
+      .entity-badge {
+        background: rgba(255,255,255,.15);
+        border: 1px solid rgba(255,255,255,.3);
+        border-radius: 12px;
+        padding: 10px 20px;
+        transition: background .3s;
+      }
+      .entity-badge:hover { background: rgba(255,255,255,.25); }
+
+      /* ── Identidad (tabs) ── */
+      #nosotros { padding: 70px 0; }
       .nav-pills .nav-link {
         color: var(--guinda);
         border: 2px solid var(--guinda);
         margin: 5px;
         font-weight: bold;
         border-radius: 50px;
-        transition: 0.3s;
+        transition: .3s;
+        text-transform: uppercase;
+        font-size: .85rem;
       }
       .nav-pills .nav-link.active {
         background-color: var(--guinda);
         color: white !important;
       }
-
       .tab-custom-content {
         background-color: var(--guinda);
-        color: white !important; /* TEXTO BLANCO SOBRE GUINDA */
+        color: white !important;
         padding: 40px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(112, 22, 29, 0.3);
+        box-shadow: 0 10px 30px rgba(112,22,29,.3);
       }
-      .tab-custom-content p {
-        color: white !important;
-      }
+      .tab-custom-content p { color: white !important; }
 
-      /* Cards de Servicios con Iconos */
+      /* ── Service cards ── */
       .service-card {
         border: none;
         border-radius: 20px;
-        transition: 0.4s;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid var(--guinda) !important;
+        transition: transform .3s, box-shadow .3s, background .3s;
+        box-shadow: 0 8px 25px rgba(0,0,0,.05);
         background: #fff;
-        padding: 40px 20px;
+        padding: 35px 25px;
         text-align: center;
       }
-      .service-card i {
-        font-size: 3rem;
-        color: var(--guinda);
-        margin-bottom: 20px;
-        transition: 0.3s;
+      .service-card .icon-box {
+        width: 80px; height: 80px;
+        background: var(--guinda-light);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 20px;
+        transition: background .3s;
       }
-      .service-card:hover {
-        transform: translateY(-15px);
-        background: var(--guinda);
-        color: white;
-      }
-      .service-card:hover i {
-        color: white;
+      .service-card .icon-box i { font-size: 2rem; color: var(--guinda); transition: color .3s; }
+      .service-card:hover { transform: translateY(-12px); background: var(--guinda); color: white; box-shadow: 0 20px 40px rgba(112,22,29,.25); }
+      .service-card:hover h4, .service-card:hover p, .service-card:hover li { color: white !important; }
+      .service-card:hover .icon-box { background: rgba(255,255,255,.2); }
+      .service-card:hover .icon-box i { color: white; }
+      .service-card:hover .fa-check { color: #a8f0c6 !important; }
+      .service-card p.desc { font-size: .93rem; color: #555; margin: 0; }
+
+      /* ── Conciliación banner ── */
+      .conciliacion-banner {
+        background: linear-gradient(135deg, #1a0508 0%, var(--guinda) 50%, #9b2028 100%);
+        padding: 6px 0;
       }
 
-      /* Estilos para Tarjetas de Archivos */
+      /* ── CTA banner ── */
+      .cta-section {
+        background:
+          linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+          url("img/foto_5.PNG") no-repeat center center/cover;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* ── Download cards ── */
       .download-card {
         border: 2px dashed #ddd;
         border-radius: 15px;
         padding: 30px;
-        transition: all 0.3s ease;
+        transition: all .3s ease;
         background: #fff;
-        position: relative;
-        overflow: hidden;
       }
-
       .download-card:hover {
         border-color: var(--guinda);
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
       }
-
-      .file-icon {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-        display: block;
-      }
-
-      .pdf-color {
-        color: #e74c3c;
-      }
-      .word-color {
-        color: #2b579a;
-      }
-
+      .file-icon { font-size: 3.5rem; margin-bottom: 15px; display: block; }
+      .pdf-color { color: #e74c3c; }
       .btn-download-file {
         background-color: var(--guinda);
         color: white;
@@ -159,204 +197,156 @@
         width: 100%;
         border: none;
         padding: 10px;
-        transition: 0.3s;
+        transition: .3s;
       }
+      .btn-download-file:hover { background-color: var(--guinda-hover); color: white; }
 
-      .btn-download-file:hover {
-        background-color: var(--guinda-hover);
-        color: white;
-      }
-
-      /* Botón WhatsApp flotante */
-      .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 20px;
-        background-color: #25d366; /* Verde clásico de WhatsApp */
-        color: #fff !important;
-        border-radius: 50%;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      }
-      .whatsapp-float i {
-        font-size: 36px;
-        line-height: 60px;
-        color: #ffffff !important; /* Asegura que el ícono sea siempre blanco */
-      }
-      @media (max-width: 768px) {
-        .whatsapp-float {
-          width: 50px;
-          height: 50px;
-          bottom: 20px;
-          right: 15px;
-        }
-        .whatsapp-float i {
-          font-size: 30px;
-          line-height: 50px;
-        }
-      }
-
-      /* Equipo */
-      .team-avatar {
-        overflow: hidden;
-        position: relative;
-      }
+      /* ── Equipo ── */
       .team-card {
-        transition: all 0.3s ease;
+        transition: all .3s ease;
+        border-top: 3px solid transparent;
       }
       .team-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(112, 22, 29, 0.2) !important;
+        box-shadow: 0 15px 35px rgba(112,22,29,.2) !important;
+        border-top-color: var(--guinda);
       }
-      .team-card img {
-        transition: all 0.3s ease;
+      .team-avatar { overflow: hidden; position: relative; }
+      .team-avatar img { transition: transform .3s; }
+      .team-card:hover .team-avatar img { transform: scale(1.07); }
+
+      /* ── WhatsApp flotante ── */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px; height: 60px;
+        bottom: 40px; right: 20px;
+        background-color: #25d366;
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,.3);
+        z-index: 1000;
+        transition: all .3s ease;
+        display: flex; align-items: center; justify-content: center;
       }
-      .team-card:hover img {
-        transform: scale(1.1);
+      .whatsapp-float:hover { transform: scale(1.15); box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+      .whatsapp-float i { font-size: 32px; color: #fff; }
+
+      @media (max-width: 768px) {
+        .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 15px; }
+        .whatsapp-float i { font-size: 26px; }
+        .entity-divider .d-flex { flex-direction: column; gap: 8px; }
+      }
+
+      /* ── Separador visual de entidades en la página ── */
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--guinda);
+        color: white;
+        padding: 6px 18px;
+        border-radius: 30px;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      /* ── Materias conciliables card ── */
+      .materia-item {
+        border-left: 3px solid var(--guinda);
+        padding-left: 12px;
+        margin-bottom: 8px;
       }
     </style>
   </head>
   <body>
+
+    <!-- ════════════════════════════════════════
+         NAVBAR
+    ════════════════════════════════════════ -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a
-          class="navbar-brand fw-bold"
-          href="#"
-          style="color: var(--guinda); font-size: 1.5rem"
-        >
-          <i class="fas fa-balance-scale me-2"></i>GRUPO CHANDUVI
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#" style="color:var(--guinda); font-size:1.3rem">
+          <i class="fas fa-balance-scale"></i>
+          <span>GRUPO <span style="color:#333">CHANDUVI</span></span>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto text-center">
+          <ul class="navbar-nav ms-auto text-center align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Identidad</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
+              <a class="nav-link" href="#servicios">
+                Servicios <span class="nav-badge bg-secondary text-white">GRUPO</span>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#nosotros">Identidad</a>
+              <a class="nav-link" href="#conciliacion">
+                Conciliación <span class="nav-badge text-white" style="background:var(--guinda)">CENTRO</span>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#servicios">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#modelos">Modelos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- ════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
     <section id="inicio" class="hero">
       <div class="container" data-aos="zoom-in">
-        <h1 class="display-2 fw-bold mb-4">Grupo Corporativo Chanduvi</h1>
-        <p class="lead fs-3 mb-5">
-          Eficiencia y transparencia en soluciones legales y empresariales.
-        </p>
-        <a
-          href="#servicios"
-          class="btn btn-lg btn-light fw-bold px-5 py-3 shadow"
-          style="color: var(--guinda); border-radius: 50px"
-        >
-          NUESTROS SERVICIOS <i class="fas fa-chevron-right ms-2"></i>
-        </a>
-      </div>
-    </section>
-
-    <section
-      id="inicio"
-      class="hero"
-      style="
-        background:
-          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-          url(&quot;img/foto_9.png&quot;) no-repeat center center/cover;
-        background-attachment: fixed;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      "
-    >
-      <div class="container text-center" data-aos="zoom-in">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <h1
-              class="display-1 fw-bold mb-3 text-white"
-              style="letter-spacing: -1px"
-            >
-              GRUPO CORPORATIVO <span style="color: #e6b3b3">CHANDUVI</span>
+
+            <!-- Dos tags que identifican ambas entidades -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+              <span class="hero-tag" style="background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4)">
+                <i class="fas fa-building me-1"></i> Grupo Corporativo
+              </span>
+              <span class="hero-tag" style="background:var(--guinda); border:1px solid rgba(255,255,255,.3)">
+                <i class="fas fa-handshake me-1"></i> Centro de Conciliación
+              </span>
+            </div>
+
+            <h1 class="display-1 fw-bold mb-3 text-white" style="letter-spacing:-1px">
+              GRUPO CORPORATIVO <span style="color:#e6b3b3">CHANDUVI</span>
             </h1>
 
-            <div
-              class="glass-container p-4 p-md-5 rounded-4 mb-4"
-              style="
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-              "
-            >
+            <div class="hero-glass p-4 p-md-5 rounded-4 mb-4">
               <p class="lead fs-3 fw-light mb-4">
-                Soluciones legales y empresariales integrales en la ciudad de
-                Piura.
+                Soluciones legales y empresariales integrales en la ciudad de Piura.
               </p>
-
               <div class="row g-3 justify-content-center mb-4">
                 <div class="col-6 col-md-3">
-                  <div class="text-white small">
-                    <i class="fas fa-check-circle text-success me-2"></i
-                    >Eficiencia
-                  </div>
+                  <div class="text-white small"><i class="fas fa-check-circle text-success me-2"></i>Eficiencia</div>
                 </div>
                 <div class="col-6 col-md-3">
-                  <div class="text-white small">
-                    <i class="fas fa-check-circle text-success me-2"></i
-                    >Transparencia
-                  </div>
+                  <div class="text-white small"><i class="fas fa-check-circle text-success me-2"></i>Transparencia</div>
                 </div>
                 <div class="col-6 col-md-3">
-                  <div class="text-white small">
-                    <i class="fas fa-check-circle text-success me-2"></i>Paz
-                    Jurídica
-                  </div>
+                  <div class="text-white small"><i class="fas fa-check-circle text-success me-2"></i>Paz Jurídica</div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="text-white small"><i class="fas fa-check-circle text-success me-2"></i>Excelencia</div>
                 </div>
               </div>
-
               <p class="fs-5 mb-0 opacity-75">
-                Especialistas en conciliación familiar, civil y defensa
-                corporativa. Resolvemos conflictos de forma pacífica y segura
-                para proteger tu futuro.
+                Especialistas en conciliación familiar, civil y defensa corporativa. Resolvemos conflictos de forma pacífica y segura para proteger tu futuro.
               </p>
             </div>
 
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <a
-                href="#servicios"
-                class="btn btn-lg btn-light fw-bold px-5 py-3 shadow-lg"
-                style="color: var(--guinda); border-radius: 50px"
-              >
+              <a href="#servicios" class="btn btn-lg btn-light fw-bold px-5 py-3 shadow-lg" style="color:var(--guinda); border-radius:50px">
                 EXPLORAR SERVICIOS <i class="fas fa-th-large ms-2"></i>
               </a>
-              <a
-                href="#conciliacion"
-                class="btn btn-lg btn-outline-light fw-bold px-5 py-3"
-                style="border-radius: 50px"
-              >
+              <a href="#conciliacion" class="btn btn-lg btn-outline-light fw-bold px-5 py-3" style="border-radius:50px">
                 CONCILIAR AHORA <i class="fas fa-handshake ms-2"></i>
               </a>
             </div>
@@ -365,927 +355,471 @@
       </div>
     </section>
 
-    <section id="nosotros">
-      <div class="container text-center">
-        <h2 class="fw-bold">NUESTRA IDENTIDAD</h2>
-        <div class="linea-roja"></div>
-        <p class="mb-5 text-muted fs-5">
-          Liderazgo a cargo del
-          <strong>Gerente General Hugo Chanduvi Vargas</strong>.
-        </p>
-
-        <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab">
-          <li class="nav-item">
-            <button
-              class="nav-link active px-4"
-              data-bs-toggle="pill"
-              data-bs-target="#mision"
-            >
-              <i class="fas fa-bullseye me-2"></i>MISIÓN
-            </button>
-          </li>
-          <li class="nav-item">
-            <button
-              class="nav-link px-4"
-              data-bs-toggle="pill"
-              data-bs-target="#vision"
-            >
-              <i class="fas fa-eye me-2"></i>VISIÓN
-            </button>
-          </li>
-          <li class="nav-item">
-            <button
-              class="nav-link px-4"
-              data-bs-toggle="pill"
-              data-bs-target="#valores"
-            >
-              <i class="fas fa-star me-2"></i>VALORES
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="pills-tabContent" data-aos="fade-up">
-          <div class="tab-pane fade show active" id="mision">
-            <div class="tab-custom-content">
-              <h3 class="mb-3">Misión</h3>
-              <p class="fs-4 italic">
-                "Mejorar la toma de decisiones de nuestros clientes para
-                optimizar la eficiencia de los resultados."
-              </p>
-            </div>
+    <!-- ════════════════════════════════════════
+         DIVISOR — muestra las DOS entidades
+    ════════════════════════════════════════ -->
+    <div class="entity-divider" data-aos="fade-up">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap text-center">
+          <div class="entity-badge">
+            <i class="fas fa-building me-2"></i>
+            <strong>Grupo Corporativo Chanduvi</strong>
+            <span class="d-block" style="font-size:.75rem; opacity:.8">Asesoría Legal &amp; Empresarial</span>
           </div>
-          <div class="tab-pane fade" id="vision">
-            <div class="tab-custom-content">
-              <h3 class="mb-4 text-white text-center">
-                <i class="fas fa-eye me-2"></i>Nuestra Visión
-              </h3>
-
-              <p class="fs-5 mb-4 text-white text-center italic">
-                "Proveer acceso a la información suficiente para el mundo en un
-                click."
-                <!-- Corregí "del" a "el", parece un typo -->
-              </p>
-
-              <div class="row g-3">
-                <div class="col-md-4">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-users me-1"></i> Gente
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Inspirarnos para ser los mejores, ofreciendo un gran lugar
-                      para trabajar.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-briefcase me-1"></i> Portafolio
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Ofrecer al mundo un portafolio de marcas que anticipe y
-                      cumpla con los deseos y necesidades.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-handshake me-1"></i> Socios
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Fomentar una red de socios y construir lealtad mutua.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-globe-americas me-1"></i> Planeta
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Ser ciudadanos globalmente responsables que ayudan a
-                      construir comunidades sostenibles.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-chart-line me-1"></i> Utilidades
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Maximizar retornos para los accionistas, cumpliendo con
-                      nuestras responsabilidades.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <div
-                    class="p-3 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <h6 class="fw-bold" style="color: var(--guinda)">
-                      <i class="fas fa-bolt me-1"></i> Productividad
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Ser una organización efectiva, ágil y esbelta.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="valores">
-            <div class="tab-custom-content">
-              <h3 class="mb-4 text-white text-center">
-                <i class="fas fa-star me-2"></i>Nuestros Valores Fundamentales
-              </h3>
-
-              <div class="row g-4">
-                <!-- Valor 1 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-crown fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Liderazgo
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      El valor para crear un mundo mejor.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 2 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-users fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Colaboración
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Impulsar el genio colectivo.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 3 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-handshake fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Integridad
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Sé real.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 4 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-shield-alt fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Responsabilidad
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Si debe hacerse, yo me encargo.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 5 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-heart fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Pasión
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Mente y corazón comprometidos.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 6 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-globe-americas fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Diversidad
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Tan incluyente como nuestras marcas.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Valor 7 -->
-                <div class="col-md-4">
-                  <div
-                    class="p-4 bg-white rounded-3 shadow-sm h-100 text-center"
-                  >
-                    <i
-                      class="fas fa-award fs-1 mb-3"
-                      style="color: var(--guinda)"
-                    ></i>
-                    <h6 class="fw-bold mb-2" style="color: var(--guinda)">
-                      Calidad
-                    </h6>
-                    <p class="small mb-0" style="color: #000000 !important">
-                      Lo que hacemos, lo hacemos bien.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div style="font-size:1.5rem; opacity:.5">⟷</div>
+          <div class="entity-badge">
+            <i class="fas fa-handshake me-2"></i>
+            <strong>Centro de Conciliación "El Portal Soluciones"</strong>
+            <span class="d-block" style="font-size:.75rem; opacity:.8">Res. N°1689-2018-JUS · Autorizado MINJUS</span>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         IDENTIDAD
+    ════════════════════════════════════════ -->
+    <section id="nosotros">
+        <div class="container text-center">
+            <h2 class="fw-bold">NUESTRA IDENTIDAD</h2>
+            <div class="linea-roja"></div>
+            <p class="mb-5 text-muted fs-5">Liderazgo a cargo del <strong>Gerente General Hugo Chanduvi Vargas</strong>.</p>
+            
+            <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab">
+                <li class="nav-item"><button class="nav-link active px-4" data-bs-toggle="pill" data-bs-target="#mision"><i class="fas fa-bullseye me-2"></i>MISIÓN</button></li>
+                <li class="nav-item"><button class="nav-link px-4" data-bs-toggle="pill" data-bs-target="#vision"><i class="fas fa-eye me-2"></i>VISIÓN</button></li>
+                <li class="nav-item"><button class="nav-link px-4" data-bs-toggle="pill" data-bs-target="#valores"><i class="fas fa-star me-2"></i>VALORES</button></li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent" data-aos="fade-up">
+                <div class="tab-pane fade show active" id="mision">
+                    <div class="tab-custom-content">
+                        <h3 class="mb-3">Misión</h3>
+                        <p class="fs-4 italic">"Mejorar la toma de decisiones de nuestros clientes para optimizar la eficiencia de los resultados."</p>
+                    </div>
+                </div>
+               <div class="tab-pane fade" id="vision">
+    <div class="tab-custom-content">
+        <h3 class="mb-4 text-white text-center">
+            <i class="fas fa-eye me-2"></i>Nuestra Visión
+        </h3>
+        
+        <p class="fs-5 mb-4 text-white text-center italic">
+            "Proveer acceso a la información suficiente para el mundo en un click."  <!-- Corregí "del" a "el", parece un typo -->
+        </p>
+       
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-users me-1"></i> Gente
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Inspirarnos para ser los mejores, ofreciendo un gran lugar para trabajar.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-briefcase me-1"></i> Portafolio
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Ofrecer al mundo un portafolio de marcas que anticipe y cumpla con los deseos y necesidades.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-handshake me-1"></i> Socios
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Fomentar una red de socios y construir lealtad mutua.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mt-3">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-globe-americas me-1"></i> Planeta
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Ser ciudadanos globalmente responsables que ayudan a construir comunidades sostenibles.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mt-3">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-chart-line me-1"></i> Utilidades
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Maximizar retornos para los accionistas, cumpliendo con nuestras responsabilidades.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mt-3">
+                <div class="p-3 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <h6 class="fw-bold" style="color: var(--guinda);">
+                        <i class="fas fa-bolt me-1"></i> Productividad
+                    </h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Ser una organización efectiva, ágil y esbelta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="tab-pane fade" id="valores">
+    <div class="tab-custom-content">
+        <h3 class="mb-4 text-white text-center">
+            <i class="fas fa-star me-2"></i>Nuestros Valores Fundamentales
+        </h3>
+        
+        <div class="row g-4">
+            <!-- Valor 1 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-crown fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Liderazgo</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        El valor para crear un mundo mejor.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 2 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-users fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Colaboración</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Impulsar el genio colectivo.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 3 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-handshake fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Integridad</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Sé real.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 4 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-shield-alt fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Responsabilidad</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Si debe hacerse, yo me encargo.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 5 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-heart fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Pasión</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Mente y corazón comprometidos.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 6 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-globe-americas fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Diversidad</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Tan incluyente como nuestras marcas.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valor 7 -->
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-3 shadow-sm h-100 text-center">
+                    <i class="fas fa-award fs-1 mb-3" style="color: var(--guinda);"></i>
+                    <h6 class="fw-bold mb-2" style="color: var(--guinda);">Calidad</h6>
+                    <p class="small mb-0" style="color: #000000 !important;">
+                        Lo que hacemos, lo hacemos bien.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
     </section>
 
-    <section id="servicios" class="py-5" style="background-color: #fcfcfc">
+
+    <!-- ════════════════════════════════════════
+         SERVICIOS — Grupo Corporativo
+    ════════════════════════════════════════ -->
+    <section id="servicios" class="py-5" style="background:#fcfcfc">
       <div class="container text-center">
         <div class="mb-5" data-aos="fade-up">
-          <span
-            class="text-uppercase fw-bold"
-            style="color: var(--guinda); letter-spacing: 2px; font-size: 0.9rem"
-            >Expertos a tu servicio</span
-          >
+          <div class="section-label"><i class="fas fa-building"></i> Grupo Corporativo Chanduvi</div>
           <h2 class="display-5 fw-bold mt-2">Nuestras Soluciones Integrales</h2>
           <div class="linea-roja mx-auto mt-3"></div>
-          <p class="lead text-muted mt-4 max-width-700 mx-auto">
-            Ofrecemos asesoría estratégica y representación legal con un enfoque
-            personalizado para cada etapa de tu negocio o caso personal.
+          <p class="lead text-muted mt-4 mx-auto" style="max-width:680px">
+            Asesoría estratégica y representación legal con un enfoque personalizado para cada etapa de tu negocio o caso personal.
           </p>
         </div>
 
-        <div class="row g-4 justify-content-center mb-5">
+        <div class="row g-4 justify-content-center">
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i
-                  class="fas fa-lightbulb fs-2"
-                  style="color: var(--guinda)"
-                ></i>
-              </div>
-              <h4 class="fw-bold h5">Consultoría Especializada</h4>
-              <p class="small fw-bold h1">
-                Asesoría estratégica adaptada a tus necesidades legales y
-                empresariales, con enfoque en resultados óptimos y prácticos.
-              </p>
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+              <h4 class="fw-bold h5 mb-3">Consultoría Especializada</h4>
+              <p class="desc">Asesoría estratégica adaptada a tus necesidades legales y empresariales, con enfoque en resultados óptimos y prácticos.</p>
             </div>
           </div>
 
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i class="fas fa-gavel fs-2" style="color: var(--guinda)"></i>
-              </div>
-              <h4 class="fw-bold h5">Defensa Judicial</h4>
-              <ul
-                class="list-unstyled small text-start mx-auto mb-0"
-                style="max-width: fit-content"
-              >
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Derecho Civil y
-                  Penal
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Administrativo y
-                  Laboral
-                </li>
-                <li>
-                  <i class="fas fa-check text-success me-2"></i>Asuntos
-                  Constitucionales
-                </li>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-gavel"></i></div>
+              <h4 class="fw-bold h5 mb-3">Defensa Judicial</h4>
+              <ul class="list-unstyled small text-start mx-auto mb-0" style="max-width:fit-content">
+                <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Derecho Civil y Penal</li>
+                <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Administrativo y Laboral</li>
+                <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Asuntos Constitucionales</li>
               </ul>
             </div>
           </div>
 
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i
-                  class="fas fa-briefcase fs-2"
-                  style="color: var(--guinda)"
-                ></i>
-              </div>
-              <h4 class="fw-bold h5">Gestión Empresarial</h4>
-              <p class="small fw-bold h1">
-                Planeamiento societario y consultoría para optimizar el
-                crecimiento y cumplimiento normativo de tu empresa.
-              </p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+              <h4 class="fw-bold h5 mb-3">Gestión Empresarial</h4>
+              <p class="desc">Planeamiento societario y consultoría para optimizar el crecimiento y cumplimiento normativo de tu empresa.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i
-                  class="fas fa-file-signature fs-2"
-                  style="color: var(--guinda)"
-                ></i>
-              </div>
-              <h4 class="fw-bold h5">Elaboración de Contratos</h4>
-              <p class="small fw-bold h1">
-                Redacción y revisión de contratos comerciales, laborales y de
-                arrendamiento con total seguridad jurídica.
-              </p>
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-file-signature"></i></div>
+              <h4 class="fw-bold h5 mb-3">Elaboración de Contratos</h4>
+              <p class="desc">Redacción y revisión de contratos comerciales, laborales y de arrendamiento con total seguridad jurídica.</p>
             </div>
           </div>
 
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i class="fas fa-home fs-2" style="color: var(--guinda)"></i>
-              </div>
-              <h4 class="fw-bold h5">Saneamiento Inmobiliario</h4>
-              <p class="small fw-bold h1">
-                Regularización de títulos, posesión y asegurar la titularidad
-                limpia de tus bienes inmuebles.
-              </p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-home"></i></div>
+              <h4 class="fw-bold h5 mb-3">Saneamiento Inmobiliario</h4>
+              <p class="desc">Regularización de títulos, posesión y titularidad limpia de tus bienes inmuebles.</p>
             </div>
           </div>
 
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div
-              class="card service-card border-0 shadow-sm h-100 p-4"
-              style="
-                border-top: 4px solid var(--guinda) !important;
-                transition: transform 0.3s ease;
-              "
-            >
-              <div
-                class="icon-box mb-4 mx-auto d-flex align-items-center justify-content-center"
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: #fff1f2;
-                  border-radius: 50%;
-                "
-              >
-                <i
-                  class="fas fa-calculator fs-2"
-                  style="color: var(--guinda)"
-                ></i>
-              </div>
-              <h4 class="fw-bold h5">Asesoría Contable</h4>
-              <p class="small fw-bold h1">
-                Planificación fiscal y cumplimiento tributario para minimizar
-                riesgos y optimizar tus finanzas.
-              </p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card service-card h-100">
+              <div class="icon-box"><i class="fas fa-calculator"></i></div>
+              <h4 class="fw-bold h5 mb-3">Asesoría Contable</h4>
+              <p class="desc">Planificación fiscal y cumplimiento tributario para minimizar riesgos y optimizar tus finanzas.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Sección CTA con imagen de fondo - Banner completo -->
-      <section
-        class="cta-section py-5 position-relative text-center text-white"
-        style="
-          background:
-            linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-            url(&quot;img/foto_5.PNG&quot;) no-repeat center center/cover;
-          min-height: 100px;
-          display: flex;
-          align-items: center;
-        "
-      >
-        <div class="container position-relative z-1">
-          <h3 class="display-4 fw-bold mb-4">
-            ¿Listo para resolver tu conflicto de forma pacífica y rápida?
-          </h3>
-          <p class="lead fs-4 mb-5">
-            En el Centro de Conciliación Despliega Perú te acompañamos en temas
-            de alimentos, régimen de visitas, tenencia y más. ¡Contáctanos hoy!
-          </p>
-
-          <a
-            href="#contacto"
-            class="btn btn-lg px-5 py-3 fw-bold shadow-lg"
-            style="
-              background: var(--guinda);
-              color: white;
-              border: none;
-              border-radius: 50px;
-              font-size: 1.4rem;
-            "
-          >
-            <i class="fas fa-phone-alt me-2"></i> SOLICITA TU ASESORÍA GRATUITA
-          </a>
-        </div>
-      </section>
     </section>
 
-    <section id="conciliacion" class="py-5" style="background-color: #fdfdfd">
+    <!-- ════════════════════════════════════════
+         CTA BANNER
+    ════════════════════════════════════════ -->
+    <section class="cta-section py-5 text-center text-white" data-aos="fade-up">
+      <div class="container">
+        <h3 class="display-5 fw-bold mb-4">¿Listo para resolver tu conflicto de forma pacífica y rápida?</h3>
+        <p class="lead fs-4 mb-5">
+          En el Centro de Conciliación <strong>Despliega Perú</strong> te acompañamos en temas de alimentos, régimen de visitas, tenencia y más. ¡Contáctanos hoy!
+        </p>
+        <a href="#contacto" class="btn btn-lg px-5 py-3 fw-bold shadow-lg" style="background:var(--guinda); color:white; border:none; border-radius:50px; font-size:1.2rem">
+          <i class="fas fa-phone-alt me-2"></i> SOLICITA TU ASESORÍA GRATUITA
+        </a>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CONCILIACIÓN — Centro de Conciliación
+    ════════════════════════════════════════ -->
+    <section id="conciliacion" class="py-5" style="background:#fdfdfd">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
-          <h2 class="fw-bold">CENTRO DE CONCILIACIÓN EXTRAJUDICIAL</h2>
-          <h4 class="text-muted">“EL PORTAL SOLUCIONES”</h4>
+          <div class="section-label"><i class="fas fa-handshake"></i> Centro de Conciliación Extrajudicial</div>
+          <h2 class="fw-bold mt-2">CENTRO DE CONCILIACIÓN EXTRAJUDICIAL</h2>
+          <h4 class="text-muted">"EL PORTAL SOLUCIONES"</h4>
           <div class="linea-roja"></div>
-          <p class="badge bg-secondary p-2 shadow-sm">
-            Autorizado por Resolución Directoral N°1689 – 2018-JUS/DGDPAJ- DCMA
-          </p>
+          <span class="badge bg-secondary p-2 shadow-sm">
+            Autorizado por Resolución Directoral N°1689 – 2018-JUS/DGDPAJ-DCMA
+          </span>
         </div>
 
-        <div class="row g-4">
-          <div class="col-12" data-aos="fade-up">
-            <div
-              class="bg-white p-5 rounded-4 shadow-sm border-top border-5"
-              style="border-color: var(--guinda) !important"
-            >
-              <h3 class="text-center mb-5" style="color: var(--guinda)">
+        <div class="row g-4" data-aos="fade-up">
+          <div class="col-12">
+            <div class="bg-white p-5 rounded-4 shadow-sm border-top border-5" style="border-color:var(--guinda) !important">
+              <h3 class="text-center mb-5" style="color:var(--guinda)">
                 <i class="fas fa-balance-scale me-2"></i>MATERIAS CONCILIABLES
               </h3>
 
               <div class="row">
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
                     <i class="fas fa-city me-2"></i>1. Asuntos Societarios
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Controversias sobre
-                      acuerdos societarios
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Obligaciones de la
-                      sociedad
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Temas
-                      contractuales, societarios y otros
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Controversias sobre acuerdos societarios</li>
+                    <li class="materia-item">Obligaciones de la sociedad</li>
+                    <li class="materia-item">Temas contractuales, societarios y otros</li>
                   </ul>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
                     <i class="fas fa-users me-2"></i>2. Asuntos de Familia
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Pensión de
-                      alimentos
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Tenencia
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Régimen de visitas
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Acuerdo
-                      convencional de divorcio
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Liquidación de
-                      sociedades gananciales
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Pensión de alimentos</li>
+                    <li class="materia-item">Tenencia</li>
+                    <li class="materia-item">Régimen de visitas</li>
+                    <li class="materia-item">Acuerdo convencional de divorcio</li>
+                    <li class="materia-item">Liquidación de sociedades gananciales</li>
                   </ul>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
                     <i class="fas fa-gavel me-2"></i>3. Asuntos Civiles
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Controversias
-                      contractuales
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Conflicto de
-                      propiedad
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Obligaciones
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Desalojo
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Asuntos sujetos a
-                      ley de conciliación
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Controversias contractuales</li>
+                    <li class="materia-item">Conflicto de propiedad</li>
+                    <li class="materia-item">Obligaciones</li>
+                    <li class="materia-item">Desalojo</li>
+                    <li class="materia-item">Asuntos sujetos a ley de conciliación</li>
                   </ul>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
-                    <i class="fas fa-building me-2"></i>4. Contrataciones del
-                    Estado
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
+                    <i class="fas fa-building me-2"></i>4. Contrataciones del Estado
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Liquidación de
-                      obras
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Contrato del estado
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Asuntos de
-                      conciliación extrajudicial
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Liquidación de obras</li>
+                    <li class="materia-item">Contrato del estado</li>
+                    <li class="materia-item">Asuntos de conciliación extrajudicial</li>
                   </ul>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
                     <i class="fas fa-university me-2"></i>5. Asuntos Financieros
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Obligaciones del
-                      sistema financiero nacional
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Obligaciones del sistema financiero nacional</li>
                   </ul>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <h5
-                    class="fw-bold text-uppercase"
-                    style="color: var(--guinda)"
-                  >
+                  <h5 class="fw-bold text-uppercase" style="color:var(--guinda)">
                     <i class="fas fa-scroll me-2"></i>6. Asuntos de Sucesiones
                   </h5>
-                  <ul class="list-unstyled ms-4">
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>Petición de
-                      herencia
-                    </li>
-                    <li class="mb-1">
-                      <i class="fas fa-caret-right me-2"></i>División y
-                      partición de bienes
-                    </li>
+                  <ul class="list-unstyled ms-3">
+                    <li class="materia-item">Petición de herencia</li>
+                    <li class="materia-item">División y partición de bienes</li>
                   </ul>
                 </div>
               </div>
 
-              <div
-                class="mt-4 p-4 rounded-3 text-white text-center"
-                style="background-color: var(--guinda)"
-              >
-                <div class="row align-items-center">
-                  <div class="col-md-4 border-end border-secondary">
-                    <p class="mb-0">
-                      <i class="fas fa-map-marker-alt me-2"></i>Calle Arequipa
-                      1065, Piura
-                    </p>
-                  </div>
-                  <div class="col-md-4 border-end border-secondary">
-                    <p class="mb-0">
-                      <i class="fas fa-phone-alt me-2"></i>969257723
-                    </p>
+              <!-- Info barra -->
+              <div class="mt-4 p-4 rounded-3 text-white text-center" style="background:var(--guinda)">
+                <div class="row align-items-center g-3">
+                  <div class="col-md-4">
+                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Calle Arequipa 1065, Piura</p>
                   </div>
                   <div class="col-md-4">
-                    <p class="mb-0">
-                      <i class="fas fa-laptop me-2"></i>Virtuales y Presenciales
-                    </p>
+                    <p class="mb-0"><i class="fas fa-phone-alt me-2"></i>969 257 723</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="mb-0"><i class="fas fa-laptop me-2"></i>Virtuales y Presenciales</p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ════════════════════════════════════════
+         EQUIPO
+    ════════════════════════════════════════ -->
     <section id="equipo" class="py-5 bg-light">
       <div class="container text-center">
-        <h2 class="fw-bold mb-3">NUESTRO EQUIPO</h2>
-        <p class="lead text-muted mb-5">
-          Profesionales comprometidos con la excelencia y la resolución pacífica
-          de conflictos.
-        </p>
+        <div class="section-label mx-auto"><i class="fas fa-users"></i> Nuestro Equipo</div>
+        <h2 class="fw-bold mt-2 mb-2">NUESTRO EQUIPO</h2>
+        <p class="lead text-muted mb-2">Profesionales comprometidos con la excelencia y la resolución pacífica de conflictos.</p>
         <div class="linea-roja mb-5"></div>
 
         <div class="row g-4 justify-content-center">
-          <!-- Integrante 1: Gerente General (destacado un poco más grande) -->
+          <!-- Integrante 1: Gerente General -->
           <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up">
-            <div
-              class="team-card bg-white rounded-4 shadow p-4 h-100 text-center"
-            >
-              <div
-                class="team-avatar mx-auto mb-4"
-                style="width: 180px; height: 180px"
-              >
-                <img
-                  src="img/foto_10.jpeg"
-                  alt="Hugo Chanduvi Vargas"
-                  class="rounded-circle img-fluid border border-5"
-                  style="
-                    border-color: var(--guinda) !important;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                  "
-                />
+            <div class="team-card bg-white rounded-4 shadow p-4 h-100 text-center">
+              <div class="team-avatar mx-auto mb-4" style="width:180px;height:180px">
+                <img src="img/foto_10.jpeg" alt="Hugo Chanduvi Vargas" class="rounded-circle img-fluid border border-5" style="border-color:var(--guinda)!important;object-fit:cover;width:100%;height:100%" />
               </div>
               <h4 class="fw-bold mb-1">Hugo Chanduvi Vargas</h4>
-              <p
-                class="text-uppercase fw-bold small"
-                style="color: var(--guinda)"
-              >
-                Gerente General
-              </p>
-              <p class="text-muted small italic mb-0">
-                "Comprometidos con la excelencia y la pasión en cada decisión."
-              </p>
+              <p class="text-uppercase fw-bold small" style="color:var(--guinda)">Gerente General</p>
+              <p class="text-muted small mb-0" style="font-style:italic">"Comprometidos con la excelencia y la pasión en cada decisión."</p>
             </div>
           </div>
 
           <!-- Integrante 2 -->
-          <div
-            class="col-lg-3 col-md-4 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div
-              class="team-card bg-white rounded-4 shadow p-4 h-100 text-center"
-            >
-              <div
-                class="team-avatar mx-auto mb-4"
-                style="width: 160px; height: 160px"
-              >
-                <img
-                  src="img/foto_1.PNG"
-                  alt="Nombre Integrante 2"
-                  class="rounded-circle img-fluid border border-5"
-                  style="
-                    border-color: var(--guinda) !important;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                  "
-                />
+          <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-card bg-white rounded-4 shadow p-4 h-100 text-center">
+              <div class="team-avatar mx-auto mb-4" style="width:160px;height:160px">
+                <img src="img/foto_1.PNG" alt="Dulce Saguma" class="rounded-circle img-fluid border border-5" style="border-color:var(--guinda)!important;object-fit:cover;width:100%;height:100%" />
               </div>
-              <h5 class="fw-bold mb-1">Nombre del Integrante</h5>
-              <p
-                class="text-uppercase small fw-bold"
-                style="color: var(--guinda)"
-              >
-                Cargo (ej. Abogada Senior)
-              </p>
-              <p class="text-muted small mb-0">
-                Breve descripción o frase motivadora.
-              </p>
+              <h5 class="fw-bold mb-1">Dulce Saguma</h5>
+              <p class="text-uppercase small fw-bold" style="color:var(--guinda)">Asesora</p>
+              <p class="text-muted small mb-0">Breve descripción o frase motivadora.</p>
             </div>
           </div>
 
           <!-- Integrante 3 -->
-          <div
-            class="col-lg-3 col-md-4 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div
-              class="team-card bg-white rounded-4 shadow p-4 h-100 text-center"
-            >
-              <div
-                class="team-avatar mx-auto mb-4"
-                style="width: 160px; height: 160px"
-              >
-                <img
-                  src="img/foto_7.png"
-                  alt="Nombre Integrante 3"
-                  class="rounded-circle img-fluid border border-5"
-                  style="
-                    border-color: var(--guinda) !important;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                  "
-                />
+          <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-card bg-white rounded-4 shadow p-4 h-100 text-center">
+              <div class="team-avatar mx-auto mb-4" style="width:160px;height:160px">
+                <img src="img/foto_7.png" alt="Phillips Brawerd" class="rounded-circle img-fluid border border-5" style="border-color:var(--guinda)!important;object-fit:cover;width:100%;height:100%" />
               </div>
-              <h5 class="fw-bold mb-1">Nombre del Integrante</h5>
-              <p
-                class="text-uppercase small fw-bold"
-                style="color: var(--guinda)"
-              >
-                Cargo
-              </p>
+              <h5 class="fw-bold mb-1">Phillips Brawerd</h5>
+              <p class="text-uppercase small fw-bold" style="color:var(--guinda)">Asesor</p>
               <p class="text-muted small mb-0">Breve descripción.</p>
             </div>
           </div>
 
           <!-- Integrante 4 -->
-          <div
-            class="col-lg-3 col-md-4 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div
-              class="team-card bg-white rounded-4 shadow p-4 h-100 text-center"
-            >
-              <div
-                class="team-avatar mx-auto mb-4"
-                style="width: 160px; height: 160px"
-              >
-                <img
-                  src="URL_DE_LA_FOTO_4.jpg"
-                  alt="Nombre Integrante 4"
-                  class="rounded-circle img-fluid border border-5"
-                  style="
-                    border-color: var(--guinda) !important;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                  "
-                />
+          <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-card bg-white rounded-4 shadow p-4 h-100 text-center">
+              <div class="team-avatar mx-auto mb-4" style="width:160px;height:160px">
+                <img src="img/foto_12.jpeg" alt="Yomira Pecherres" class="rounded-circle img-fluid border border-5" style="border-color:var(--guinda)!important;object-fit:cover;width:100%;height:100%" />
               </div>
-              <h5 class="fw-bold mb-1">Nombre del Integrante</h5>
-              <p
-                class="text-uppercase small fw-bold"
-                style="color: var(--guinda)"
-              >
-                Cargo
-              </p>
-              <p class="text-muted small mb-0">Breve descripción.</p>
-            </div>
-          </div>
-
-          <!-- Integrante 5 -->
-          <div
-            class="col-lg-3 col-md-4 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div
-              class="team-card bg-white rounded-4 shadow p-4 h-100 text-center"
-            >
-              <div
-                class="team-avatar mx-auto mb-4"
-                style="width: 160px; height: 160px"
-              >
-                <img
-                  src="URL_DE_LA_FOTO_5.jpg"
-                  alt="Nombre Integrante 5"
-                  class="rounded-circle img-fluid border border-5"
-                  style="
-                    border-color: var(--guinda) !important;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                  "
-                />
-              </div>
-              <h5 class="fw-bold mb-1">Nombre del Integrante</h5>
-              <p
-                class="text-uppercase small fw-bold"
-                style="color: var(--guinda)"
-              >
-                Cargo
-              </p>
+              <h5 class="fw-bold mb-1">Yomira Pecherres</h5>
+              <p class="text-uppercase small fw-bold" style="color:var(--guinda)">Conciliadora Extrajudicial</p>
               <p class="text-muted small mb-0">Breve descripción.</p>
             </div>
           </div>
@@ -1293,78 +827,51 @@
       </div>
     </section>
 
-    <section id="modelos" class="bg-light py-5">
+    <!-- ════════════════════════════════════════
+         MODELOS DE SOLICITUD
+    ════════════════════════════════════════ -->
+    <section id="modelos" class="py-5" style="background:#fff">
       <div class="container text-center">
-        <h2 class="fw-bold text-uppercase">Modelos de Solicitud</h2>
-        <div class="linea-roja mb-4"></div>
-        <p class="text-muted mb-5">
-          Descarga los formatos oficiales autorizados por el Ministerio de
-          Justicia para tus trámites en Piura.
-        </p>
+        <div class="section-label mx-auto"><i class="fas fa-file-alt"></i> Centro de Conciliación</div>
+        <h2 class="fw-bold mt-2">Modelos de Solicitud</h2>
+        <div class="linea-roja"></div>
+        <p class="text-muted mb-5">Descarga los formatos oficiales autorizados por el Ministerio de Justicia para tus trámites en Piura.</p>
 
         <div class="row g-4">
           <div class="col-md-4" data-aos="fade-up">
-            <div
-              class="download-card h-100 d-flex flex-column justify-content-between"
-            >
+            <div class="download-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <i class="fas fa-file-pdf file-icon pdf-color"></i>
                 <h4 class="fw-bold">Solicitud Conjunta</h4>
-                <p class="small text-muted">
-                  Formato para acuerdos de
-                  <strong>Alimentos, Tenencia y Régimen de Visitas</strong>
-                  entre ambas partes.
-                </p>
+                <p class="small text-muted">Formato para acuerdos de <strong>Alimentos, Tenencia y Régimen de Visitas</strong> entre ambas partes.</p>
               </div>
-              <a
-                href="document/SOLICITUD CONJUNTA.pdf"
-                download
-                class="btn btn-download-file mt-3"
-              >
+              <a href="document/SOLICITUD CONJUNTA.pdf" download class="btn btn-download-file mt-3">
                 <i class="fas fa-cloud-download-alt me-2"></i>DESCARGAR PDF
               </a>
             </div>
           </div>
 
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="download-card h-100 d-flex flex-column justify-content-between"
-            >
+            <div class="download-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <i class="fas fa-file-pdf file-icon pdf-color"></i>
                 <h4 class="fw-bold">Solicitud para Conciliar</h4>
-                <p class="small text-muted">
-                  Modelo para pretensiones individuales como
-                  <strong>Desalojo</strong> y otros asuntos civiles.
-                </p>
+                <p class="small text-muted">Modelo para pretensiones individuales como <strong>Desalojo</strong> y otros asuntos civiles.</p>
               </div>
-              <a
-                href="document/MODELO SOLICITUD PARA CONCILIAR.pdf"
-                download
-                class="btn btn-download-file mt-3"
-              >
+              <a href="document/MODELO SOLICITUD PARA CONCILIAR.pdf" download class="btn btn-download-file mt-3">
                 <i class="fas fa-cloud-download-alt me-2"></i>DESCARGAR PDF
               </a>
             </div>
           </div>
 
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="download-card h-100 d-flex flex-column justify-content-between"
-            >
+            <div class="download-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <i class="fas fa-file-pdf file-icon pdf-color"></i>
                 <h4 class="fw-bold">Acta de Notificación</h4>
-                <p class="small text-muted">
-                  Modelo oficial para dejar constancia de la invitación a
-                  conciliar en el domicilio.
-                </p>
+                <p class="small text-muted">Modelo oficial para dejar constancia de la invitación a conciliar en el domicilio.</p>
               </div>
-              <a
-                href="document/NOTIFICACION - MODELO.pdf"
-                download
-                class="btn btn-download-file mt-3"
-              >
+              <a href="document/NOTIFICACION - MODELO.pdf" download class="btn btn-download-file mt-3">
                 <i class="fas fa-cloud-download-alt me-2"></i>DESCARGAR PDF
               </a>
             </div>
@@ -1372,86 +879,70 @@
         </div>
       </div>
     </section>
-    <footer
-      id="contacto"
-      class="py-5"
-      style="
-        background: #1a1a1a;
-        color: #ccc;
-        border-top: 10px solid var(--guinda);
-      "
-    >
+
+    <!-- ════════════════════════════════════════
+         FOOTER / CONTACTO
+    ════════════════════════════════════════ -->
+    <footer id="contacto" class="py-5" style="background:#1a1a1a; color:#ccc; border-top:10px solid var(--guinda)">
       <div class="container">
         <div class="row g-5">
           <div class="col-md-6" data-aos="fade-right">
             <h2 class="fw-bold text-white mb-4">¿NECESITAS ASESORÍA?</h2>
-            <p class="fs-5 mb-4">
-              Estamos en Piura listos para ayudarte con soluciones legales y
-              contables.
+            <p class="fs-5 mb-4">Estamos en Piura listos para ayudarte con soluciones legales y contables.</p>
+
+            <!-- Grupo -->
+            <p class="text-uppercase fw-bold mb-1" style="color:var(--guinda); font-size:.8rem; letter-spacing:1px">
+              <i class="fas fa-building me-1"></i> Grupo Corporativo Chanduvi
             </p>
-            <p>
-              <i class="fas fa-map-marker-alt me-2 text-white"></i> Calle
-              Arequipa N° 1065 – Centro de Piura
-            </p>
+            <p><i class="fas fa-map-marker-alt me-2 text-white"></i> Calle Arequipa N° 1065 – Centro de Piura</p>
             <p><i class="fas fa-phone-alt me-2 text-white"></i> 969 257 723</p>
-            <p>
-              <i class="fas fa-envelope me-2 text-white"></i>
-              hchanduvi1@gmail.com
+            <p><i class="fas fa-envelope me-2 text-white"></i> grupochanduvi@gmail.com</p>
+
+            <!-- Centro -->
+            <p class="text-uppercase fw-bold mt-3 mb-1" style="color:var(--guinda); font-size:.8rem; letter-spacing:1px">
+              <i class="fas fa-handshake me-1"></i> Centro de Conciliación "El Portal Soluciones"
             </p>
+            <p><i class="fas fa-map-marker-alt me-2 text-white"></i> Calle Arequipa N° 1065 – Centro de Piura</p>
+            <p><i class="fas fa-phone-alt me-2 text-white"></i> 969 257 723</p>
+            <p><i class="fas fa-laptop me-2 text-white"></i> Atención Virtual y Presencial</p>
           </div>
+
           <div class="col-md-6 text-md-end" data-aos="fade-left">
             <h3 class="text-white mb-4">CONTÁCTANOS</h3>
             <div class="mb-4">
-              <a
-                href="#"
-                class="btn btn-outline-light rounded-circle me-2"
-                style="width: 50px; height: 50px; padding: 12px"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                href="#"
-                class="btn btn-outline-light rounded-circle me-2"
-                style="width: 50px; height: 50px; padding: 12px"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                href="#"
-                class="btn btn-outline-light rounded-circle"
-                style="width: 50px; height: 50px; padding: 12px"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
+              <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width:50px;height:50px;padding:12px">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width:50px;height:50px;padding:12px">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/51969257723?text=Hola,%20quiero%20consultar%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" class="btn btn-outline-light rounded-circle" style="width:50px;height:50px;padding:12px">
+                <i class="fab fa-whatsapp"></i>
+              </a>
             </div>
-            <button
-              class="btn btn-light fw-bold px-4 py-2"
-              style="color: var(--guinda)"
-            >
-              ESCRIBIR POR WHATSAPP
-            </button>
+            <a href="https://wa.me/51969257723?text=Hola,%20quiero%20consultar%20sobre%20sus%20servicios%20de%20conciliación%20y%20asesoría%20legal." target="_blank" rel="noopener noreferrer" class="btn btn-light fw-bold px-4 py-2" style="color:var(--guinda)">
+              <i class="fab fa-whatsapp me-2"></i>ESCRIBIR POR WHATSAPP
+            </a>
           </div>
         </div>
+
         <hr class="my-5 border-secondary" />
         <p class="text-center small mb-0">
-          &copy; 2026 Grupo Corporativo Chanduvi. Todos los derechos reservados.
-          | Diseñado para la excelencia.
+          &copy; 2026 <strong>Grupo Corporativo Chanduvi</strong> &amp; <strong>Centro de Conciliación "El Portal Soluciones"</strong>. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
     <!-- Botón WhatsApp flotante -->
-    <div class="whatsapp-float">
-      <a
-        href="https://wa.me/51969257723?text=Hola,%20quiero%20consultar%20sobre%20sus%20servicios%20de%20conciliación%20y%20asesoría%20legal."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
+    <a href="https://wa.me/51969257723?text=Hola,%20quiero%20consultar%20sobre%20sus%20servicios%20de%20conciliación%20y%20asesoría%20legal." target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Escríbenos por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({ duration: 1000, once: true });
+      AOS.init({ duration: 800, once: true, offset: 80 });
     </script>
   </body>
 </html>
